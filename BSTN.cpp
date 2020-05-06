@@ -227,3 +227,41 @@ void BSTN::insertRec(int k, BTNode *r) {
         else insertRec(k, r->right);
     }
 }
+
+int BSTN::height() const {
+    int num = 0;
+    BTNode *pl = root; BTNode *pr = root;
+    if(root == NULL) return 0;
+    if (pl->left== NULL && pr->right==NULL) ;
+
+
+}
+
+int BSTN::leaves() const {
+    BTNode *cl = root; BTNode *cr = root;
+    int num = 0;
+    while(cl->left || cr->right) {
+        if (cl->right == NULL && cl->left == NULL) return 1;
+        if (cr->right == NULL && cr->left == NULL) return 1;
+    }
+else
+{
+    cl = cl->left; cr = cr->right
+    return ;
+}
+}
+
+int BSTN::maxValueLeaf() const {
+
+}
+
+BTNode* BSTN :: successor(BTNode *n) const
+{
+    BTNode *c = n;
+    BTNode *suc = c->right;
+    while (suc->left )
+        suc = suc->left;
+
+    return suc;
+
+}
