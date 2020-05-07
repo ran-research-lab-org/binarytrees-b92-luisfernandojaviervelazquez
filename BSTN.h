@@ -34,14 +34,15 @@ public:
     BTNode *searchRec(int k) const;
     BTNode *searchRec(int k, BTNode *r) const;
     BTNode* successor(BTNode *n) const;
+    int height(BTNode *p)const;
     int height()const ;
+    int leaves(BTNode *p)const;
     int leaves()const;
+    int maxValueLeaf(BTNode *h)const;
     int maxValueLeaf()const;
-
 
     string InOrder() const;
     void InOrder(BTNode *n, string &st) const;
-
     string BFS() const;
 };
 

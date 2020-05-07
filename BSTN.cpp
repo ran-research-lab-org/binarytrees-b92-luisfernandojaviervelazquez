@@ -228,40 +228,70 @@ void BSTN::insertRec(int k, BTNode *r) {
     }
 }
 
+int BSTN::height(BTNode *p)const{
+
+ int a , b;
+ if (p == NULL)return 0;
+ else{
+     a = height(p->left);
+     b = height(p->right);
+     if(a>b)return a+1;
+     else return b+1;
+ }
+}
+
 int BSTN::height() const {
-    int num = 0;
-    BTNode *pl = root; BTNode *pr = root;
-    if(root == NULL) return 0;
-    if (pl->left== NULL && pr->right==NULL) ;
-
-
+    return height(root);
 }
+int BSTN::leaves(BTNode *p)const {
+    int num=0;
+    if(p == NULL || (p == root && p->right == NULL && p->left==NULL)) return 0;
 
+    if ( p->left == NULL && p->right==NULL && p !=root) return 1;
+    else return leaves(p->left) + leaves(p->right);
+}
 int BSTN::leaves() const {
-    BTNode *cl = root; BTNode *cr = root;
-    int num = 0;
-    while(cl->left || cr->right) {
-        if (cl->right == NULL && cl->left == NULL) return 1;
-        if (cr->right == NULL && cr->left == NULL) return 1;
-    }
-else
-{
-    cl = cl->left; cr = cr->right
-    return ;
+   return leaves(root);
 }
+
+int BSTN::maxValueLeaf(BTNode *h) const {
+    int maxval  = h->key;
+
+    while(h)
+    {
+        if(h->right!=NULL)
+        {
+            if(h->right==NULL && h->left==NULL)
+            {
+                if(maxval < h->key)maxval=h->key;
+            }
+        h = h->right;
+        }
+        else {
+
+            if (h->right == NULL && h->left == NULL) {
+                if (maxval < h->key)maxval = h->key;
+            }
+            h = h->left;
+        }
+
+    }
+    return maxval;
 }
 
 int BSTN::maxValueLeaf() const {
-
+    return maxValueLeaf(root);
 }
 
 BTNode* BSTN :: successor(BTNode *n) const
 {
-    BTNode *c = n;
-    BTNode *suc = c->right;
-    while (suc->left )
-        suc = suc->left;
+    BTNode *suc = n->right;
+    if(n->right) {
 
-    return suc;
+        while (suc->left != NULL)
+            suc = suc->left;
+        return suc;
+    }
+    else return nullptr;
+    }
 
-}
