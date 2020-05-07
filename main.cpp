@@ -27,21 +27,7 @@ vector<int> bstXL = {56,46,75,23,86,95,9,1,6,3,4,7,2,8,45,47,38,12,123,124,5};
     REQUIRE(E.successor(B.search(95))==124);
 
 
-   /* REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();
-    REQUIRE();*/
+
 
 
 
