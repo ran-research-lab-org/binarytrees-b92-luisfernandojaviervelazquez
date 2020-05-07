@@ -1,6 +1,6 @@
 #include <iostream>
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "C:\Users\Luis\OneDrive - University of Puerto Rico\Desktop\catch.hpp"
+#include "catch.hpp"
 #include "BSTN.h"
 using namespace std;
 
@@ -24,7 +24,7 @@ vector<int> bstXL = {56,46,75,23,86,95,9,1,6,3,4,7,2,8,45,47,38,12,123,124,5};
     REQUIRE( E.height()== 9);
     REQUIRE(E.leaves()==7);
     REQUIRE(E.maxValueLeaf()==124);
-    REQUIRE(E.successor(B.search(95))==124);
+    REQUIRE(E.successor(B.search(95)) ==124);
 
 
 
